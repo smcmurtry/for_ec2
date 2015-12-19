@@ -31,7 +31,7 @@ for n in range(root_entry['cited_by_int']/10 + 1):
         
 def get_soup(url):
 #     r = requests.get(url)
-    r = requests.get(url, headers=headers)
+    r = requests.get(url, headers=headers, verify=False)
     html_doc = r.content
     soup = BeautifulSoup(html_doc)
     return soup
