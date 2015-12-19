@@ -37,9 +37,11 @@ def get_soup(url):
     return soup
 
 for n, url in enumerate(urls):
-    if n >= start_url and n <= end_url:
+    if n >= int(start_url) and n <= int(end_url):
+        print n
         soup = get_soup(url)
-        filename = 'scholar_res_pg_' + str(n)
+        filename = 'scholar_res_pg_' + str(n) + '.html'
         f = open(filename, "w")
+        # f.write('asdf asdfaw aseltkj ;alwet a asdf asldg a;sldk')
         f.write(str(soup))
         f.close()
